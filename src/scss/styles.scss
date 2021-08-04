@@ -28,6 +28,9 @@ body {
   .center-image {
     grid-column: 2 / -2;
     grid-row: 2 / -2;
+    background-image: url("file:///C:/Users/jyoun/Desktop/10X19-clone/images/art.png");
+    background-size: cover;
+    background-position: center;
   }
   .number__row {
     background-color: $bg;
@@ -37,6 +40,36 @@ body {
     align-items: stretch;
     .number {
       background-color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      transition: all 0.2s linear;
+      &:hover {
+        background-color: $bg;
+        color: white;
+      }
     }
+  }
+  .scrolling__text {
+    grid-column-start: 2;
+    line-break: strict;
+    white-space: nowrap;
+    overflow: hidden;
+    span {
+      animation: scrollText 5s linear infinite;
+    }
+  }
+}
+
+@keyframes scrollText {
+  0% {
+    transform: translateX(150px);
+  }
+  50% {
+    transform: translateX(-150px);
+  }
+  100% {
+    transform: translateX(150px);
   }
 }
